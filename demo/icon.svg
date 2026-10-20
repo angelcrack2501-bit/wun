@@ -10,7 +10,7 @@
   <g transform="rotate(-10 256 290)" filter="url(#sh)">
     <path d="M256 128 L372 206 Q384 214 384 229 V410 Q384 436 358 436 H154 Q128 436 128 410 V229 Q128 214 140 206 Z" fill="url(#tag)"/>
     <circle cx="256" cy="210" r="22" fill="#1d2e25"/><circle cx="256" cy="210" r="10" fill="#f4f0e4"/>
-    <text x="256" y="352" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-weight="900" font-size="104" letter-spacing="-4" fill="#1d2e25">CP</text>
+    <text x="256" y="352" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-weight="900" font-size="86" letter-spacing="-3" fill="#1d2e25">WuN</text>
     <rect x="186" y="374" width="140" height="11" rx="5.5" fill="#2fa866"/>
   </g>
 </svg>
