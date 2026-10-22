@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /demo/
+Disallow: /shop/
+Disallow: /tienda/
+Disallow: /panel/
+Disallow: /entrar/
