@@ -4,3 +4,4 @@ Disallow: /shop/
 Disallow: /tienda/
 Disallow: /panel/
 Disallow: /entrar/
+Disallow: /restaurant/
