@@ -5,3 +5,4 @@ Disallow: /tienda/
 Disallow: /panel/
 Disallow: /entrar/
 Disallow: /restaurant/
+Disallow: /oficina/

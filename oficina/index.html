@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>WuN Oficina</title>
+<meta name="apple-mobile-web-app-title" content="WuN">
+<meta name="theme-color" content="#0c1211">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="favicon-64.png">
+<style>
+  :root{color-scheme:dark}
+  html,body{margin:0;min-height:100%;background:#0c1211;color:#e9f1ee;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  main{max-width:420px;margin:0 auto;padding:calc(36px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 40px max(20px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center}
+  img{width:120px;height:120px;border-radius:28px;box-shadow:0 18px 50px rgba(47,210,122,.18)}
+  h1{margin:0;font-size:24px}
+  p{margin:0;color:#93a5a0}
+  a.go{display:block;width:100%;box-sizing:border-box;background:#2fd27a;color:#06210f;font-weight:700;text-decoration:none;border-radius:14px;padding:14px}
+  ol{text-align:left;margin:0;padding-left:20px;color:#c8d6d2;display:flex;flex-direction:column;gap:6px}
+  .box{background:#141c1a;border:1px solid #26332f;border-radius:16px;padding:16px;width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:10px}
+  .box b{color:#e9f1ee}
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-512.png" alt="Ícono de WuN Oficina">
+  <h1>Tu Oficina WuN</h1>
+  <p id="msg">Tu equipo trabajando, a un toque.</p>
+  <a class="go" id="go" href="https://claude.ai/artifact/X7peygnZYdbu2hUayEBFSE">Entrar a la Oficina</a>
+  <div class="box" id="como">
+    <b>Para dejarla en tu iPhone con este ícono</b>
+    <ol>
+      <li>Toca <b>Compartir</b> (el cuadrito con la flecha, abajo).</li>
+      <li>Toca <b>Agregar a inicio</b>.</li>
+      <li>Toca <b>Agregar</b>. Listo: desde el ícono entras directo.</li>
+    </ol>
+  </div>
+</main>
+<script>
+  // Desde el ícono de inicio (?app=1) entra directo; abierta a mano, deja agregar el ícono primero.
+  var url = "https://claude.ai/artifact/X7peygnZYdbu2hUayEBFSE";
+  var q = new URLSearchParams(location.search);
+  if (q.get("app") === "1") {
+    document.getElementById("msg").textContent = "Abriendo tu Oficina…";
+    document.getElementById("como").hidden = true;
+    location.replace(url);
+  } else {
+    try { history.replaceState(null, "", location.pathname + "?app=1"); } catch (e) {}
+  }
+</script>
+</body>
+</html>
