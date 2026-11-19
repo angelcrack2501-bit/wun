@@ -1,0 +1,1 @@
+var e={apiKey:`AIzaSyCmzXz0hntR69svykE2GKvVSyUvF2j_ZlU`,authDomain:`wun-nube.firebaseapp.com`,projectId:`wun-nube`,storageBucket:`wun-nube.firebasestorage.app`,messagingSenderId:`768673460571`,appId:`1:768673460571:web:65936addc7dfb50dc4ea7e`};export{e as t};
