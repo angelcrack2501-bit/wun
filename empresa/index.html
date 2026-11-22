@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1310">
+<meta name="description" content="WuN automatiza los procesos de negocios, clínicas y entidades públicas en Bucaramanga: software a la medida, automatización con IA, sistemas para negocios, marketing con IA y gobierno digital.">
+<meta property="og:title" content="WuN · Automatización de procesos hecha en Bucaramanga">
+<meta property="og:description" content="Software a la medida, automatización con IA y gobierno digital para negocios, salud y entidades públicas.">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<title>WuN · La empresa</title>
+<style>
+/* VOICE: empresa de tecnología seria y cercana; habla de problemas resueltos, no de herramientas
+   IDEA: un tablero de control de procesos: cada línea de WuN es un panel que se enciende
+   PICTURE: el tablero de automatizaciones (demo ilustrativa) y pantallas reales de WuN
+   COLOUR and TYPE: noche verde #0b1310, verde WuN #22c55e, menta #34e0a1, crema #f2efe8; Archivo ancho + Inter
+   LAYOUT: barra fija, hero con tablero a la derecha, bandas a todo el ancho, contenido a 1200px */
+@font-face{font-family:Archivo;src:url(fonts/archivo.woff2) format("woff2");font-stretch:62% 125%;font-weight:100 900;font-display:swap}
+@font-face{font-family:Inter;src:url(fonts/inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#0b1310;--bg2:#101b16;--card:#14211b;--line:#24362d;--ink:#eef4f0;--mute:#9db3a7;--green:#22c55e;--mint:#34e0a1;--cream:#f2efe8;--dark:#0f1512;--amber:#f0b23a}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;font-stretch:112%;line-height:1.06;margin:0;text-wrap:balance;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.wrap{max-width:1200px;margin:auto;padding:0 max(5vw,18px)}
+header{position:sticky;top:0;z-index:20;background:rgba(11,19,16,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.marca{font:800 26px Archivo,sans-serif;font-stretch:118%;text-decoration:none}.marca i{color:var(--green);font-style:normal}
+.links{display:flex;gap:22px;align-items:center}.links a{text-decoration:none;color:var(--mute);font-weight:500;font-size:15px}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:15px}
+.btn.v{background:var(--green);color:#04130a}.btn.v:hover{background:var(--mint)}
+.btn.o{border:1.5px solid var(--line);color:var(--ink);background:transparent}.btn.o:hover{border-color:var(--mint)}
+.menu{display:none}
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(40px,6vw,80px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+.eyebrow{color:var(--mint);font-weight:600;font-size:14px;margin:0 0 14px}
+.hero h1{font-size:clamp(38px,5.4vw,66px)}
+.hero h1 b{color:var(--green);font-weight:inherit}
+.hero p.lead{color:var(--mute);font-size:clamp(17px,1.6vw,19px);max-width:560px;margin:18px 0 26px}
+.acc{display:flex;gap:12px;flex-wrap:wrap}
+.lineas{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.lineas span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--mute)}
+/* tablero */
+.tablero{background:linear-gradient(160deg,#13241c,#0d1813);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.tb-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.tb-top b{font-size:13px;letter-spacing:.04em;color:var(--mute);font-weight:600}
+.demo-tag{font-size:12px;color:var(--mint);border:1px solid rgba(52,224,161,.35);border-radius:999px;padding:3px 10px}
+.tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{background:transparent;border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:7px 14px;font:600 14px Inter;cursor:pointer;min-height:38px}
+.tabs button[aria-selected=true]{background:var(--green);border-color:var(--green);color:#04130a}
+.flujo{display:grid;gap:8px;margin-bottom:14px}
+.paso{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px}
+.paso .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:rgba(34,197,94,.14);color:var(--green);font-weight:800;font-size:13px}
+.paso em{font-style:normal;font-size:12px;color:var(--mint);white-space:nowrap}
+.paso.on{border-color:var(--green);box-shadow:0 0 0 1px var(--green) inset}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi b{display:block;font:800 clamp(20px,2.2vw,26px) Archivo,sans-serif;color:var(--mint)}
+.kpi span{font-size:12px;color:var(--mute)}
+.tb-pie{font-size:12px;color:var(--mute);margin:10px 2px 0}
+/* bandas */
+.band{padding:clamp(56px,8vw,104px) 0;border-top:1px solid var(--line)}
+.band.claro{background:var(--cream);color:var(--dark);border:0}
+.band.claro .mute{color:#55635d}
+.sec-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;margin-bottom:34px}
+.sec-h h2{font-size:clamp(30px,3.6vw,46px)}
+.mute{color:var(--mute)}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sol{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.sol .ic{width:44px;height:44px;border-radius:12px;background:rgba(34,197,94,.13);color:var(--green);display:grid;place-items:center}
+.sol .ic svg{width:24px;height:24px}
+.sol h3{font-size:20px}.sol p{margin:0;color:var(--mute);font-size:15px}
+.sol ul{margin:4px 0 0;padding-left:18px;color:var(--mute);font-size:14px}
+.linea{border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:12px;min-height:100%}
+.linea.n{background:#e5f3ea}.linea.s{background:#e7eef7}.linea.g{background:#0f1512;color:var(--ink)}
+.linea h3{font-size:24px}.linea p{margin:0}
+.linea .tag{font-size:13px;font-weight:700;color:#16a34a}.linea.s .tag{color:#2457a6}.linea.g .tag{color:var(--mint)}
+.linea ul{margin:0;padding-left:18px;font-size:15px}
+.shot{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font-size:13px;color:var(--mute);padding:10px 14px;background:var(--card)}
+.pasos{counter-reset:p;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pasos div{border-top:3px solid var(--green);padding-top:14px}
+.pasos div::before{counter-increment:p;content:"0" counter(p);font:800 34px Archivo,sans-serif;color:var(--green);display:block}
+.pasos h3{font-size:19px;margin:6px 0}.pasos p{margin:0;color:var(--mute);font-size:15px}
+.caso{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.caso .sector{font-size:13px;color:var(--mint);font-weight:600}
+.caso h3{font-size:18px;margin:6px 0 8px}.caso p{margin:0;color:var(--mute);font-size:15px}
+.estado{display:inline-block;margin-top:10px;font-size:12px;border-radius:999px;padding:3px 10px;border:1px solid var(--line);color:var(--mute)}
+.estado.ok{border-color:rgba(34,197,94,.5);color:var(--green)}
+.persona{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:start;background:#fff;border-radius:20px;padding:22px;border:1px solid #e3e0d7}
+.av{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;font:800 26px Archivo,sans-serif;color:#fff;background:linear-gradient(135deg,#16a34a,#0f1512)}
+.av.b{background:linear-gradient(135deg,#2457a6,#0f1512)}
+.persona h3{font-size:22px}.persona .rol{color:#16a34a;font-weight:700;font-size:14px;margin:2px 0 8px}.persona p{margin:0;color:#3d4a44;font-size:15px}
+.comp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.comp div{border:1px solid var(--line);border-radius:16px;padding:18px}
+.comp b{display:block;font-size:17px;margin-bottom:4px}.comp span{color:var(--mute);font-size:14px}
+.cta{background:linear-gradient(135deg,#16a34a,#0d3b22);border-radius:26px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
+.cta h2{font-size:clamp(28px,3.6vw,44px)}.cta p{margin:10px 0 0;opacity:.9}
+.cta .datos{display:grid;gap:10px}
+.cta .datos a{background:rgba(0,0,0,.25);border-radius:14px;padding:14px 16px;text-decoration:none;font-weight:600}
+.cta .datos small{display:block;opacity:.75;font-weight:400}
+footer{padding:28px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:980px){.hero,.sec-h,.cta{grid-template-columns:minmax(0,1fr)}.g4,.comp,.pasos{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.links{display:none}.links.abierto{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);padding:16px max(5vw,18px);border-bottom:1px solid var(--line)}.menu{display:inline-flex}}
+@media(max-width:600px){.g4,.g3,.g2,.comp,.pasos{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.kpi b{font-size:18px}}
+@media(prefers-reduced-motion:no-preference){.paso{transition:border-color .3s,box-shadow .3s}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="marca" href="../">WuN<i>.</i></a>
+  <nav class="links" id="links" aria-label="Secciones">
+    <a href="#soluciones">Soluciones</a><a href="#lineas">Líneas</a><a href="#casos">Casos</a><a href="#como">Cómo trabajamos</a><a href="#equipo">Equipo</a>
+    <a class="btn v" href="https://wa.me/573178045295?text=Hola%20WuN%2C%20quiero%20un%20diagn%C3%B3stico">Diagnóstico gratis</a>
+  </nav>
+  <button class="btn o menu" id="menu" aria-expanded="false" aria-controls="links">Menú</button>
+</div></header>
+
+<main>
+<section class="wrap hero">
+  <div>
+    <p class="eyebrow">WuN · What U Need · Bucaramanga</p>
+    <h1>Automatizamos los procesos de tu <b>negocio</b>, tu <b>clínica</b> o tu <b>entidad</b>.</h1>
+    <p class="lead">Buscamos la tecnología que tu proceso necesita, la entendemos y la ponemos a trabajar: software a la medida, automatización con inteligencia artificial y sistemas que tu equipo sí usa.</p>
+    <div class="acc"><a class="btn v" href="https://wa.me/573178045295?text=Hola%20WuN%2C%20quiero%20un%20diagn%C3%B3stico">Pide tu diagnóstico</a><a class="btn o" href="#soluciones">Ver soluciones</a></div>
+    <div class="lineas"><span>WuN Negocios</span><span>WuN Salud</span><span>WuN Gobierno</span><span>WuN Impulsador</span></div>
+  </div>
+  <div class="tablero" aria-label="Tablero de automatizaciones, demostración ilustrativa">
+    <div class="tb-top"><b>TABLERO DE AUTOMATIZACIONES</b><span class="demo-tag">Demo ilustrativa</span></div>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-t="negocio">Negocio</button>
+      <button role="tab" aria-selected="false" data-t="salud">Salud</button>
+      <button role="tab" aria-selected="false" data-t="gobierno">Gobierno</button>
+    </div>
+    <div class="flujo" id="flujo"></div>
+    <div class="kpis" id="kpis"></div>
+    <p class="tb-pie" id="pie"></p>
+  </div>
+</section>
+
+<section class="band" id="soluciones"><div class="wrap">
+  <div class="sec-h"><h2>Lo que hacemos</h2><p class="mute">No vendemos herramientas sueltas: entendemos el proceso, lo diseñamos con tu equipo y lo dejamos funcionando, con soporte y seguridad.</p></div>
+  <div class="grid g3">
+    <article class="sol"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span><h3>Automatización con IA</h3><p>Agentes y flujos que hacen el trabajo repetitivo: responder, agendar, registrar, conciliar y avisar.</p><ul><li>Bots de WhatsApp y llamadas</li><li>Tareas programadas con revisión humana</li></ul></article>
+    <article class="sol"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg></span><h3>Software a la medida</h3><p>Sistemas propios que reemplazan hojas de cálculo y programas que ya no te sirven, pensados para quien los usa.</p><ul><li>Web y celular</li><li>Migración de datos ordenada</li></ul></article>
+    <article class="sol"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><h3>Sistemas para negocios</h3><p>Caja, inventario, ventas, fiados y reportes que funcionan aunque se vaya el internet.</p><ul><li>WuN Shop y WuN Restaurant</li><li>Factura electrónica opcional</li></ul></article>
+    <article class="sol"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11l18-7-7 18-2-8z"/></svg></span><h3>Marketing con IA</h3><p>Contenido, videos, publicidad y campañas medibles para que tu marca venda más.</p><ul><li>WuN Impulsador</li><li>Calendario y publicación automática</li></ul></article>
+    <article class="sol"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span><h3>Datos e integraciones</h3><p>Conectamos tus sistemas, correo y WhatsApp, y te damos tableros para decidir con datos reales.</p><ul><li>Tableros e indicadores</li><li>Integraciones entre plataformas</li></ul></article>
+    <article class="sol"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M19 10v9M9 10v9M15 10v9M3 21h18"/></svg></span><h3>Gobierno digital</h3><p>Trámites en línea sobre una base común, integrados a GOV.CO, y seguimiento de obras con datos públicos.</p><ul><li>Puerta única de trámites</li><li>Ojo de Obra</li></ul></article>
+  </div>
+</div></section>
+
+<section class="band claro" id="lineas"><div class="wrap">
+  <div class="sec-h"><h2>Tres líneas, un mismo motor</h2><p class="mute">Como pasó con WuN Shop, que empezó en una tienda de ropa y hoy sirve a cualquier tipo de negocio: un núcleo común, y encima lo que cada sector necesita.</p></div>
+  <div class="grid g3">
+    <article class="linea n"><span class="tag">WuN Negocios</span><h3>Comercios y restaurantes</h3><p>Sistemas de caja e inventario, páginas web, marketing y automatizaciones para negocios que quieren crecer.</p><ul><li>WuN Shop, Restaurant y Bar</li><li>Impulsador: marca, videos y publicidad</li><li>Diagnóstico y plan a la medida</li></ul></article>
+    <article class="linea s"><span class="tag">WuN Salud</span><h3>Clínicas y laboratorios</h3><p>Agendamiento sin filas, bots que atienden pacientes y sistemas propios de gestión, con los datos protegidos.</p><ul><li>Agendamiento y atención por chat y voz</li><li>Seguimiento del paciente en tiempo real</li><li>Resultados protegidos</li></ul></article>
+    <article class="linea g"><span class="tag">WuN Gobierno</span><h3>Entidades públicas</h3><p>Digitalización de trámites y seguimiento de obras, con el código a nombre de la entidad y transferencia a su equipo.</p><ul><li>Puerta única de trámites</li><li>Seguimiento de obras con SECOP y satélite</li><li>Bolsa de horas con tope</li></ul></article>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-h"><h2>Hecho por nosotros, en uso</h2><p class="mute">Pantallas reales de WuN para negocios, con datos de ejemplo.</p></div>
+  <div class="grid g2">
+    <figure class="shot" style="margin:0"><img src="img/reportes.webp" alt="Pantalla de reportes de WuN con ventas del día, dinero recibido y fiados" width="1200" height="813"><figcaption>Reportes del día: ventas, medios de pago, fiados y apartados</figcaption></figure>
+    <figure class="shot" style="margin:0"><img src="img/caja.webp" alt="Pantalla de caja de WuN" width="1366" height="700"><figcaption>Caja que cuadra sola, aunque se vaya el internet</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band" id="casos"><div class="wrap">
+  <div class="sec-h"><h2>Problemas que ya resolvemos</h2><p class="mute">Sin nombres de clientes hasta tener su autorización. Lo que importa es el problema y cómo lo resolvimos.</p></div>
+  <div class="grid g4">
+    <article class="caso"><span class="sector">Tienda de ropa</span><h3>Ventas en cuaderno y una caja que no cuadraba</h3><p>Caja, inventario por talla y reportes diarios con WuN Shop.</p><span class="estado ok">En uso</span></article>
+    <article class="caso"><span class="sector">Restaurante</span><h3>Pedidos, cocina, domicilios y fiados por separado</h3><p>Un solo sistema para caja, meseros, cocina y domicilios.</p><span class="estado ok">En implementación</span></article>
+    <article class="caso"><span class="sector">Centro de imagenología y laboratorio</span><h3>Filas, llamadas sin contestar y dos sistemas que no se hablan</h3><p>Bots de agendamiento y un sistema propio que une sus áreas.</p><span class="estado">En desarrollo</span></article>
+    <article class="caso"><span class="sector">Comida rápida</span><h3>Publicidad que no traía clientes</h3><p>Menú nuevo, imágenes y piezas con IA para redes.</p><span class="estado ok">En curso</span></article>
+  </div>
+</div></section>
+
+<section class="band" id="como"><div class="wrap">
+  <div class="sec-h"><h2>Cómo trabajamos</h2><p class="mute">Agentes de IA que trabajan supervisados por personas: más rápido y con control.</p></div>
+  <div class="pasos">
+    <div><h3>Diagnóstico</h3><p>Entendemos tu proceso y lo que de verdad te duele. Gratis.</p></div>
+    <div><h3>Propuesta</h3><p>Qué vamos a hacer, en cuánto tiempo y cuánto cuesta, por escrito.</p></div>
+    <div><h3>Construcción</h3><p>Avances cada semana para que veas y ajustes antes de terminar.</p></div>
+    <div><h3>Entrega y soporte</h3><p>Capacitación, documentación y acompañamiento después de entregar.</p></div>
+  </div>
+</div></section>
+
+<section class="band claro" id="equipo"><div class="wrap">
+  <div class="sec-h"><h2>Quiénes estamos detrás</h2><p class="mute">Un equipo de Bucaramanga que crece por etapas, según cada proyecto.</p></div>
+  <div class="grid g2">
+    <article class="persona"><span class="av" aria-hidden="true">AV</span><div><h3>Angel Vargas</h3><p class="rol">Fundador y director de WuN</p><p>Estudiante de Ingeniería de Inteligencia Artificial (UDES). Producto, diseño y automatización de procesos con IA para negocios, salud y gobierno.</p></div></article>
+    <article class="persona"><span class="av b" aria-hidden="true">DH</span><div><h3>Deyner Higuera</h3><p class="rol">Socio y líder técnico de WuN Gobierno</p><p>Más de tres años digitalizando trámites ciudadanos de servicios públicos. Lidera la arquitectura y la ejecución técnica de los proyectos con entidades públicas.</p></div></article>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-h"><h2>Nuestros compromisos</h2><p class="mute">Lo que puedes exigirnos en cada proyecto.</p></div>
+  <div class="comp">
+    <div><b>Tus datos son tuyos</b><span>Tratamiento según la Ley 1581 de 2012 y exportación cuando la pidas.</span></div>
+    <div><b>Seguridad todos los días</b><span>El Guardián revisa dependencias, accesos y respaldos de forma automática.</span></div>
+    <div><b>Todo por escrito</b><span>Propuesta, alcance, precio y entregables antes de empezar.</span></div>
+    <div><b>Ruta de certificación</b><span>Meta 2027: ISO/IEC 27001 e ISO 9001.</span></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="cta">
+    <div><h2>¿Qué proceso te está quitando más tiempo?</h2><p>Cuéntanos y te decimos, sin costo, cómo lo automatizaríamos.</p></div>
+    <div class="datos">
+      <a href="https://wa.me/573178045295?text=Hola%20WuN%2C%20quiero%20un%20diagn%C3%B3stico">WhatsApp 317 804 5295<small>Respondemos en horario hábil</small></a>
+      <a href="mailto:hola.somoswun@gmail.com">hola.somoswun@gmail.com<small>Para propuestas y entidades</small></a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>WuN · What U Need · Bucaramanga, Colombia</span><span><a href="../">Inicio</a> · <a href="../legal/">Términos</a></span></div></footer>
+<script>
+{
+const DATA={
+ negocio:{pasos:[['Venta registrada en caja','al instante'],['Inventario descontado','automático'],['Fiado anotado y recordatorio por WhatsApp','programado'],['Reporte diario al dueño','8:00 p. m.']],kpis:[['$772.000','vendido hoy'],['14','prendas vendidas'],['$25.000','por cobrar en fiados']],pie:'Datos de ejemplo para ilustrar un negocio con WuN.'},
+ salud:{pasos:[['Paciente escribe por WhatsApp','bot responde'],['Cita agendada con preparación del examen','automático'],['Recordatorio un día antes','programado'],['Resultado protegido enviado','con su cédula']],kpis:[['18','citas agendadas por el bot'],['42','recordatorios enviados'],['6','resultados entregados']],pie:'Datos de ejemplo para ilustrar una clínica con WuN Salud.'},
+ gobierno:{pasos:[['Ciudadano radica en línea','con GOV.CO'],['Revisión automática de requisitos','antes de radicar'],['Funcionario revisa y firma','en su bandeja'],['Respuesta con código de verificación','al correo']],kpis:[['12','solicitudes radicadas'],['3','en revisión'],['9','respuestas firmadas']],pie:'Datos de ejemplo para ilustrar la puerta única de trámites.'}
+};
+const flujo=document.getElementById('flujo'),kpis=document.getElementById('kpis'),pie=document.getElementById('pie');
+let act='negocio',paso=0,t;
+function pinta(){const d=DATA[act];flujo.innerHTML=d.pasos.map((p,i)=>`<div class="paso ${i===paso?'on':''}"><span class="ic">${i+1}</span><span>${p[0]}</span><em>${p[1]}</em></div>`).join('');kpis.innerHTML=d.kpis.map(k=>`<div class="kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join('');pie.textContent=d.pie}
+function ciclo(){paso=(paso+1)%4;pinta()}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{act=b.dataset.t;paso=0;document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));pinta()}));
+pinta();
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches)t=setInterval(ciclo,1800);
+const m=document.getElementById('menu'),l=document.getElementById('links');
+m.addEventListener('click',()=>{const a=l.classList.toggle('abierto');m.setAttribute('aria-expanded',a)});
+l.addEventListener('click',e=>{if(e.target.closest('a')){l.classList.remove('abierto');m.setAttribute('aria-expanded',false)}});
+}
+</script>
+</body>
+</html>
