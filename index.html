@@ -1,36 +1,298 @@
 <!doctype html>
 <html lang="es-CO">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://firestore.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://tfhub.dev https://www.kaggle.com https://storage.googleapis.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
-    <meta name="referrer" content="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f4f2ec" />
-    <meta name="description" content="WuN: el sistema para tu negocio. Ventas, inventario y caja que funcionan aunque se vaya el internet. Hecho en Bucaramanga." />
-    <meta property="og:title" content="WuN · El sistema de tu negocio" />
-    <meta property="og:description" content="Ventas, inventario y caja que funcionan aunque se vaya el internet. WuN Shop para tiendas de ropa; Restaurant y Bar muy pronto." />
-    <meta property="og:type" content="website" />
-    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-    <title>WuN · El sistema de tu negocio</title>
-    <script type="module" crossorigin src="./assets/inicio-DUV3GNX8.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-XKyaHtl9.js">
-    <link rel="modulepreload" crossorigin href="./assets/src-C5Ppff9n.js">
-    <link rel="modulepreload" crossorigin href="./assets/capas-DjHmQECk.js">
-    <link rel="modulepreload" crossorigin href="./assets/jsx-runtime-DwjgLjnU.js">
-    <link rel="modulepreload" crossorigin href="./assets/calculator-BgRjnw3U.js">
-    <link rel="modulepreload" crossorigin href="./assets/printer-BMRwgTIB.js">
-    <link rel="modulepreload" crossorigin href="./assets/message-circle-Cyb91-Rc.js">
-    <link rel="modulepreload" crossorigin href="./assets/users-CRCT6x2M.js">
-    <link rel="modulepreload" crossorigin href="./assets/motor-CX2QtHHX.js">
-    <link rel="modulepreload" crossorigin href="./assets/shield-check-Bq2dAa8j.js">
-    <link rel="modulepreload" crossorigin href="./assets/ficha-CXvwNQ_v.js">
-    <link rel="modulepreload" crossorigin href="./assets/config-CPXRTYk2.js">
-    <link rel="modulepreload" crossorigin href="./assets/preload-helper-CRzLMJPS.js">
-    <link rel="stylesheet" crossorigin href="./assets/src-yBxy2UWF.css">
-    <link rel="stylesheet" crossorigin href="./assets/inicio-CYVNzFS-.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1310">
+<meta name="description" content="WuN es una empresa de software de Bucaramanga: sistemas para negocios, marketing con IA, soluciones para clínicas y laboratorios, y gobierno digital.">
+<meta property="og:title" content="WuN · Lo que tu negocio necesita, hecho en Bucaramanga">
+<meta property="og:description" content="Software a la medida, automatización con IA, sistemas de caja, contenido con IA y gobierno digital.">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>WuN · Software y soluciones para negocios, salud y gobierno</title>
+<style>
+/* VOICE: empresa de tecnología seria y cercana; habla de problemas resueltos, no de herramientas
+   IDEA: la casa de WuN: una puerta de entrada que te lleva a la línea que necesitas
+   PICTURE: fotos reales de negocios (Pixabay), pantallas reales de WuN y reels hechos por WuN
+   COLOUR and TYPE: noche #0b1310, verde #22c55e, menta #34e0a1, crema #f2efe8; Archivo + Inter locales
+   LAYOUT: barra fija, hero con mosaico de fotos, tarjetas grandes por línea, bandas a todo el ancho */
+@font-face{font-family:Archivo;src:url(empresa/fonts/archivo.woff2) format("woff2");font-stretch:62% 125%;font-weight:100 900;font-display:swap}
+@font-face{font-family:Inter;src:url(empresa/fonts/inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#0b1310;--bg2:#101b16;--card:#14211b;--line:#24362d;--ink:#eef4f0;--mute:#9db3a7;--green:#22c55e;--mint:#34e0a1;--cream:#f2efe8;--dark:#0f1512}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;font-stretch:112%;line-height:1.06;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.wrap{max-width:1200px;margin:auto;padding:0 max(5vw,18px)}
+header{position:sticky;top:0;z-index:20;background:rgba(11,19,16,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.marca{font:800 26px Archivo,sans-serif;font-stretch:118%;text-decoration:none}.marca i{color:var(--green);font-style:normal}
+.links{display:flex;gap:22px;align-items:center}.links a{text-decoration:none;color:var(--mute);font-weight:500;font-size:15px}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:15px;transition:background .2s,border-color .2s,transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.v{background:var(--green);color:#04130a}.btn.v:hover{background:var(--mint)}
+.btn.o{border:1.5px solid var(--line);color:var(--ink);background:transparent}.btn.o:hover{border-color:var(--mint)}
+.links .btn{color:#04130a}
+.menu{display:none}
+.eyebrow{color:var(--mint);font-weight:600;font-size:14px;margin:0 0 14px;letter-spacing:.02em}
+.mute{color:var(--mute)}
+/* hero */
+.hero{padding:clamp(40px,7vw,90px) 0 clamp(40px,6vw,80px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,66px)}
+.hero h1 b{color:var(--green);font-weight:inherit}
+.hero .lead{color:var(--mute);font-size:clamp(17px,1.6vw,19px);max-width:560px;margin:18px 0 26px}
+.acc{display:flex;gap:12px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.chips a{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--mute);text-decoration:none}.chips a:hover{border-color:var(--green);color:var(--ink)}
+.mosaico{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:12px;position:relative}
+.mosaico figure{margin:0;border-radius:18px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.mosaico figure:nth-child(1){grid-row:span 2}.mosaico figure:nth-child(4){grid-column:span 2}
+.mosaico img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 18s ease-in-out infinite alternate}
+.mosaico figure:nth-child(2) img{animation-delay:-5s}.mosaico figure:nth-child(3) img{animation-delay:-9s}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.12) translate(-2%,-2%)}}
+.mosaico figcaption{position:absolute;left:10px;bottom:10px;background:rgba(11,19,16,.82);backdrop-filter:blur(6px);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600}
+.mosaico figcaption i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:7px;box-shadow:0 0 10px var(--green);animation:lat 1.8s infinite}
+@keyframes lat{50%{opacity:.35}}
+/* bandas */
+.band{padding:clamp(56px,8vw,104px) 0;border-top:1px solid var(--line)}
+.band.claro{background:var(--cream);color:var(--dark);border:0}
+.band.claro .mute{color:#55635d}
+.sec-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;margin-bottom:34px}
+.sec-h h2{font-size:clamp(30px,3.6vw,46px)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+/* tarjetas de líneas */
+.tarj{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px;border-radius:24px;overflow:hidden;text-decoration:none;color:#fff;isolation:isolate;border:1px solid var(--line)}
+.tarj img,.tarj .fondo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s ease}
+.tarj::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,12,9,.05) 15%,rgba(6,12,9,.88) 75%)}
+.tarj:hover img,.tarj:hover .fondo{transform:scale(1.07)}
+.tarj .cuerpo{padding:26px}
+.tarj .tag{display:inline-block;font-size:13px;font-weight:700;color:#04130a;background:var(--mint);border-radius:999px;padding:3px 12px;margin-bottom:12px}
+.tarj h3{font-size:clamp(24px,2.4vw,30px)}
+.tarj p{margin-top:8px;color:#d7e4dc;font-size:15px;max-width:46ch}
+.tarj .ir{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-weight:700;color:var(--mint)}
+.tarj .ir span{transition:transform .25s}.tarj:hover .ir span{transform:translateX(5px)}
+.fondo.gob{background:radial-gradient(circle at 70% 30%,#14402a,#07110c 70%)}
+.fondo.gob svg{position:absolute;right:-30px;top:-10px;width:330px;height:330px;opacity:.9}
+.gob .anillo{transform-origin:150px 150px;animation:gira 14s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+.gob .flujo{stroke-dasharray:5 9;animation:fl 1.8s linear infinite}
+@keyframes fl{to{stroke-dashoffset:-28}}
+/* qué hacemos */
+.serv{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px;transition:border-color .3s,transform .3s}
+.serv:hover{border-color:var(--green);transform:translateY(-3px)}
+.serv .ic{width:44px;height:44px;border-radius:12px;background:rgba(34,197,94,.13);color:var(--green);display:grid;place-items:center}
+.serv .ic svg{width:24px;height:24px}
+.serv h3{font-size:19px}.serv p{color:var(--mute);font-size:15px}
+/* IA y contenido */
+.ia{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,48px);align-items:center}
+.ia ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.ia li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start;font-size:15.5px}
+.ia li::before{content:"";width:22px;height:22px;border-radius:7px;background:rgba(34,197,94,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/14px no-repeat;margin-top:2px}
+.ia li b{color:var(--ink)}.ia li span{color:var(--mute)}
+.reels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.reel{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#000;position:relative;aspect-ratio:9/16}
+.reel:nth-child(even){transform:translateY(28px)}
+.reel video{width:100%;height:100%;object-fit:cover;display:block}
+.reel figcaption{position:absolute;left:8px;right:8px;bottom:8px;font-size:12px;font-weight:600;background:rgba(11,19,16,.8);border-radius:10px;padding:5px 9px}
+.aviso-ia{font-size:13px;color:var(--mute);margin-top:44px}
+/* resolvemos */
+.res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.par{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);align-items:center;gap:10px;background:#fff;border:1px solid #e3e0d7;border-radius:18px;padding:16px 18px}
+.par .p{color:#7a3b2e;font-weight:600;font-size:15px}.par .s{color:#14532d;font-weight:600;font-size:15px}
+.par .fl{width:34px;height:34px;border-radius:50%;background:#16a34a;color:#fff;display:grid;place-items:center;font-weight:800}
+.par small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:#7d877f;margin-bottom:2px}
+.otro{margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:#0f1512;color:var(--ink);border-radius:20px;padding:22px 24px}
+.otro b{font:800 20px Archivo,sans-serif;font-stretch:110%}
+/* pantallas */
+.shot{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff;margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font-size:13px;color:var(--mute);padding:10px 14px;background:var(--card)}
+/* pasos */
+.pasos{counter-reset:p;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pasos div{border-top:3px solid var(--green);padding-top:14px}
+.pasos div::before{counter-increment:p;content:"0" counter(p);font:800 34px Archivo,sans-serif;color:var(--green);display:block}
+.pasos h3{font-size:19px;margin:6px 0}.pasos p{color:var(--mute);font-size:15px}
+/* equipo */
+.persona{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:start;background:#fff;border-radius:20px;padding:22px;border:1px solid #e3e0d7}
+.av{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;font:800 26px Archivo,sans-serif;color:#fff;background:linear-gradient(135deg,#16a34a,#0f1512)}
+.av.b{background:linear-gradient(135deg,#2457a6,#0f1512)}
+.persona h3{font-size:22px}.persona .rol{color:#16a34a;font-weight:700;font-size:14px;margin:2px 0 8px}.persona p{color:#3d4a44;font-size:15px}
+.comp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.comp div{border:1px solid var(--line);border-radius:16px;padding:18px}
+.comp b{display:block;font-size:17px;margin-bottom:4px}.comp span{color:var(--mute);font-size:14px}
+.cta{background:linear-gradient(135deg,#16a34a,#0d3b22);border-radius:26px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
+.cta h2{font-size:clamp(28px,3.6vw,44px)}.cta p{margin-top:10px;opacity:.9}
+.cta .datos{display:grid;gap:10px}
+.cta .datos a,.cta .datos div{background:rgba(0,0,0,.25);border-radius:14px;padding:14px 16px;text-decoration:none;font-weight:600}
+.cta .datos small{display:block;opacity:.75;font-weight:400}
+footer{padding:32px 0 44px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+footer .fila{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer details{margin-top:16px}footer summary{cursor:pointer}footer .cred{font-size:12.5px;margin-top:8px;line-height:1.7}
+/* aparición */
+.rv{opacity:0;transform:translateY(26px);filter:blur(10px);transition:opacity .8s,transform .8s,filter .9s}
+.rv.vis{opacity:1;transform:none;filter:none}
+@media(max-width:980px){.hero,.sec-h,.cta,.ia{grid-template-columns:minmax(0,1fr)}.g4,.comp,.pasos{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.res{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.links{display:none}.links.abierto{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);padding:16px max(5vw,18px);border-bottom:1px solid var(--line)}.menu{display:inline-flex}.reels{grid-template-columns:repeat(2,minmax(0,1fr))}.reel:nth-child(even){transform:none}}
+@media(max-width:600px){.g4,.g3,.g2,.comp,.pasos{grid-template-columns:minmax(0,1fr)}.tarj{min-height:320px}.mosaico{grid-auto-rows:120px}.par{grid-template-columns:minmax(0,1fr)}.par .fl{transform:rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="marca" href="./">WuN<i>.</i></a>
+  <nav class="links" id="links" aria-label="Secciones">
+    <a href="#lineas">Líneas</a><a href="#hacemos">Qué hacemos</a><a href="#contenido">IA y contenido</a><a href="#resolvemos">Lo que resolvemos</a><a href="#equipo">Equipo</a>
+    <a class="btn v" href="https://wa.me/573178045295?text=Hola%20WuN%2C%20quiero%20un%20diagn%C3%B3stico">Diagnóstico gratis</a>
+  </nav>
+  <button class="btn o menu" id="menu" aria-expanded="false" aria-controls="links">Menú</button>
+</div></header>
+
+<main>
+<section class="wrap hero">
+  <div>
+    <p class="eyebrow">WuN · What U Need · Bucaramanga, Santander</p>
+    <h1>Lo que tu <b>negocio</b>, tu <b>clínica</b> o tu <b>entidad</b> necesita, en un solo lugar.</h1>
+    <p class="lead">Somos una empresa de software. Entendemos tu proceso y lo ponemos a trabajar: sistemas de caja, contenido con IA, automatizaciones y trámites en línea que tu equipo sí usa.</p>
+    <div class="acc"><a class="btn v" href="#lineas">Elige tu línea</a><a class="btn o" href="https://wa.me/573178045295?text=Hola%20WuN%2C%20quiero%20un%20diagn%C3%B3stico">Diagnóstico gratis</a></div>
+    <div class="chips"><a href="./negocios/#negocios">WuN Negocios</a><a href="./negocios/#impulsador">WuN Impulsador</a><a href="#contacto">WuN Salud</a><a href="./gobierno/">WuN Gobierno</a></div>
+  </div>
+  <div class="mosaico" aria-label="Negocios como los que atendemos">
+    <figure><img src="./fotos/local_restaurante.jpg" alt="Comedor de un restaurante" width="640" height="427"><figcaption><i></i>Restaurantes</figcaption></figure>
+    <figure><img src="./fotos/local_ropa.jpg" alt="Tienda de ropa con prendas colgadas" width="640" height="427" loading="lazy"><figcaption><i></i>Tiendas</figcaption></figure>
+    <figure><img src="./fotos/local_panaderia.jpg" alt="Panes en la vitrina de una panadería" width="640" height="474" loading="lazy"><figcaption><i></i>Panaderías</figcaption></figure>
+    <figure><img src="./fotos/local_consultorio.jpg" alt="Médico atendiendo a un paciente en consultorio" width="640" height="427" loading="lazy"><figcaption><i></i>Clínicas</figcaption></figure>
+  </div>
+</section>
+
+<section class="band" id="lineas"><div class="wrap">
+  <div class="sec-h rv"><h2>Cuatro líneas, un mismo motor</h2><p class="mute">Toca la que necesitas y te llevamos directo. Todas comparten la misma base: datos protegidos, soporte cercano y todo por escrito.</p></div>
+  <div class="grid g2">
+    <a class="tarj rv" href="./negocios/#negocios"><img src="./fotos/local_ropa.jpg" alt="" width="640" height="427" loading="lazy"><div class="cuerpo"><span class="tag">WuN Negocios · POS</span><h3>Caja, inventario y fiados que cuadran solos</h3><p>Para tiendas, restaurantes, panaderías y barberías. Funciona aunque se vaya el internet.</p><span class="ir">Ver WuN Negocios <span>→</span></span></div></a>
+    <a class="tarj rv" href="./negocios/#impulsador"><img src="./fotos/local_cafeteria.jpg" alt="" width="640" height="427" loading="lazy"><div class="cuerpo"><span class="tag">WuN Impulsador</span><h3>Marketing con IA que trae clientes</h3><p>Reels, historias, menús y un plan de contenido mensual para que tu marca venda más.</p><span class="ir">Ver el Impulsador <span>→</span></span></div></a>
+    <a class="tarj rv" href="#contacto"><img src="./fotos/control_medico.jpg" alt="" width="640" height="427" loading="lazy"><div class="cuerpo"><span class="tag">WuN Salud</span><h3>Clínicas y laboratorios sin filas</h3><p>Agendamiento por WhatsApp y voz, recordatorios, resultados protegidos y sistemas propios de gestión.</p><span class="ir">Hablemos de tu clínica <span>→</span></span></div></a>
+    <a class="tarj rv" href="./gobierno/"><span class="fondo gob" aria-hidden="true"><svg viewBox="0 0 300 300"><g class="anillo"><circle cx="150" cy="150" r="110" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="260 90" stroke-linecap="round"/></g><g stroke="#22c55e" stroke-opacity=".6" stroke-width="1.5" fill="none"><polygon points="150,80 211,115 211,185 150,220 89,185 89,115"/><path class="flujo" d="M150 80V150M211 115L150 150M211 185L150 150M150 220V150M89 185L150 150M89 115L150 150"/></g><circle cx="150" cy="150" r="18" fill="#07140c" stroke="#22c55e" stroke-width="3"/><circle cx="150" cy="150" r="6" fill="#22c55e"/></svg></span><div class="cuerpo"><span class="tag">WuN Gobierno</span><h3>Trámites por una sola puerta</h3><p>Puerta única de trámites en línea y seguimiento de obras, con el código a nombre de la entidad.</p><span class="ir">Ver WuN Gobierno <span>→</span></span></div></a>
+  </div>
+</div></section>
+
+<section class="band" id="hacemos"><div class="wrap">
+  <div class="sec-h rv"><h2>Todo lo que hacemos</h2><p class="mute">Para los que quieren el detalle técnico. Si tu proceso se puede hacer con software, lo evaluamos.</p></div>
+  <div class="grid g4">
+    <article class="serv rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg></span><h3>Software a la medida</h3><p>Web, PWA y apps para celular que reemplazan hojas de cálculo y programas viejos.</p></article>
+    <article class="serv rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><h3>POS y facturación</h3><p>Caja, inventario, fiados y reportes. Factura electrónica con proveedor autorizado.</p></article>
+    <article class="serv rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></span><h3>Automatización e integraciones</h3><p>Conectamos tus sistemas por APIs y WhatsApp Business para que los datos viajen solos.</p></article>
+    <article class="serv rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span><h3>Agentes de IA</h3><p>Asistentes por voz y WhatsApp que responden, agendan y avisan, con revisión humana.</p></article>
+    <article class="serv rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span><h3>Tableros e indicadores</h3><p>Lo que necesitas ver para decidir, calculado solo y al día.</p></article>
+    <article class="serv rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><h3>Páginas web y tiendas</h3><p>Sitios rápidos, tiendas en línea y catálogos con pedido por WhatsApp.</p></article>
+    <article class="serv rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><h3>Seguridad y cumplimiento</h3><p>Datos personales según la Ley 1581 de 2012, accesos controlados y respaldos.</p></article>
+    <article class="serv rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v5c0 2 3 3 6 3s6-1 6-3V9"/></svg></span><h3>Capacitación</h3><p>Tu equipo aprende a usarlo con guías sencillas y acompañamiento.</p></article>
+  </div>
+</div></section>
+
+<section class="band" id="contenido"><div class="wrap ia">
+  <div class="rv">
+    <p class="eyebrow">IA y contenido</p>
+    <h2 style="font-size:clamp(30px,3.6vw,46px)">Contenido que se ve profesional, hecho con IA y revisado por personas</h2>
+    <ul>
+      <li><b>Reels e historias <span>para Instagram, Facebook y TikTok, listos para publicar.</span></b></li>
+      <li><b>Carruseles <span>que explican tu producto en pocos segundos.</span></b></li>
+      <li><b>Actores creados con IA <span>(siempre avisamos que son IA) y voz profesional en español colombiano.</span></b></li>
+      <li><b>Menús y catálogos <span>con fotos y diseño de tu marca.</span></b></li>
+      <li><b>Planes de contenido mensuales <span>con calendario y publicación automática.</span></b></li>
+    </ul>
+    <div class="acc" style="margin-top:24px"><a class="btn v" href="./negocios/#impulsador">Ver el Impulsador</a></div>
+  </div>
+  <div class="rv">
+    <div class="reels" id="reels">
+      <figure class="reel"><video muted loop playsinline preload="none" poster="./media/2026-11-18/reel-fiados-voz.jpg" data-src="./media/2026-11-18/reel-fiados-voz.mp4"></video><figcaption>Reel · fiados</figcaption></figure>
+      <figure class="reel"><video muted loop playsinline preload="none" poster="./media/2026-11-20/bga-tienda.jpg" data-src="./media/2026-11-20/bga-tienda.mp4"></video><figcaption>Reel · tienda</figcaption></figure>
+      <figure class="reel"><video muted loop playsinline preload="none" poster="./media/2026-11-20/bga-restaurante.jpg" data-src="./media/2026-11-20/bga-restaurante.mp4"></video><figcaption>Reel · restaurante</figcaption></figure>
+      <figure class="reel"><video muted loop playsinline preload="none" poster="./media/2026-11-18/reel-blackfriday-voz.jpg" data-src="./media/2026-11-18/reel-blackfriday-voz.mp4"></video><figcaption>Reel · temporada</figcaption></figure>
+    </div>
+    <p class="aviso-ia">Piezas hechas por WuN. Los personajes de estos videos fueron creados con IA.</p>
+  </div>
+</div></section>
+
+<section class="band claro" id="resolvemos"><div class="wrap">
+  <div class="sec-h rv"><h2>Lo que resolvemos</h2><p class="mute">El problema que te quita tiempo, y lo que hacemos para que deje de pasar.</p></div>
+  <div class="res">
+    <div class="par rv"><div class="p"><small>PROBLEMA</small>La caja no cuadra al final del día</div><span class="fl">→</span><div class="s"><small>SOLUCIÓN</small>Caja con cierre diario y reporte al dueño</div></div>
+    <div class="par rv"><div class="p"><small>PROBLEMA</small>Fiados anotados en un cuaderno</div><span class="fl">→</span><div class="s"><small>SOLUCIÓN</small>Fiados con recordatorio por WhatsApp</div></div>
+    <div class="par rv"><div class="p"><small>PROBLEMA</small>Productos agotados sin darte cuenta</div><span class="fl">→</span><div class="s"><small>SOLUCIÓN</small>Inventario que avisa antes de que se acabe</div></div>
+    <div class="par rv"><div class="p"><small>PROBLEMA</small>Publicas y no llegan clientes</div><span class="fl">→</span><div class="s"><small>SOLUCIÓN</small>Plan de contenido con IA y métricas</div></div>
+    <div class="par rv"><div class="p"><small>PROBLEMA</small>Llamadas sin contestar para pedir citas</div><span class="fl">→</span><div class="s"><small>SOLUCIÓN</small>Agendamiento por WhatsApp y voz, 24 horas</div></div>
+    <div class="par rv"><div class="p"><small>PROBLEMA</small>Dos sistemas que no se hablan</div><span class="fl">→</span><div class="s"><small>SOLUCIÓN</small>Integración por APIs y un solo tablero</div></div>
+    <div class="par rv"><div class="p"><small>PROBLEMA</small>Trámites que obligan a hacer fila</div><span class="fl">→</span><div class="s"><small>SOLUCIÓN</small>Puerta única de trámites en línea</div></div>
+    <div class="par rv"><div class="p"><small>PROBLEMA</small>Tareas repetidas todos los días</div><span class="fl">→</span><div class="s"><small>SOLUCIÓN</small>Automatización con revisión humana</div></div>
+  </div>
+  <div class="otro rv"><div><b>¿Tu proceso no está aquí?</b><p class="mute" style="margin-top:4px">Lo evaluamos en el diagnóstico gratis y te decimos cómo lo resolveríamos.</p></div><a class="btn v" href="https://wa.me/573178045295?text=Hola%20WuN%2C%20quiero%20un%20diagn%C3%B3stico">Pedir diagnóstico</a></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-h rv"><h2>Hecho por nosotros, en uso</h2><p class="mute">Pantallas reales de WuN para negocios, con datos de ejemplo.</p></div>
+  <div class="grid g2">
+    <figure class="shot rv"><img src="empresa/img/reportes.webp" alt="Pantalla de reportes de WuN con ventas del día, dinero recibido y fiados" width="1200" height="813" loading="lazy"><figcaption>Reportes del día: ventas, medios de pago, fiados y apartados</figcaption></figure>
+    <figure class="shot rv"><img src="empresa/img/caja.webp" alt="Pantalla de caja de WuN" width="1366" height="700" loading="lazy"><figcaption>Caja que cuadra sola, aunque se vaya el internet</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band" id="como"><div class="wrap">
+  <div class="sec-h rv"><h2>Cómo trabajamos</h2><p class="mute">Agentes de IA que trabajan supervisados por personas: más rápido y con control.</p></div>
+  <div class="pasos rv">
+    <div><h3>Diagnóstico</h3><p>Entendemos tu proceso y lo que de verdad te duele. Gratis.</p></div>
+    <div><h3>Propuesta</h3><p>Qué vamos a hacer, en cuánto tiempo y cuánto cuesta, por escrito.</p></div>
+    <div><h3>Construcción</h3><p>Avances cada semana para que veas y ajustes antes de terminar.</p></div>
+    <div><h3>Entrega y soporte</h3><p>Capacitación, documentación y acompañamiento después de entregar.</p></div>
+  </div>
+</div></section>
+
+<section class="band claro" id="equipo"><div class="wrap">
+  <div class="sec-h rv"><h2>Quiénes estamos detrás</h2><p class="mute">Un equipo de Bucaramanga que crece por etapas, según cada proyecto.</p></div>
+  <div class="grid g2">
+    <article class="persona rv"><span class="av" aria-hidden="true">AV</span><div><h3>Angel Vargas</h3><p class="rol">Fundador y director de WuN</p><p>Estudiante de Ingeniería de Inteligencia Artificial (UDES). Producto, diseño y automatización de procesos con IA para negocios, salud y gobierno.</p></div></article>
+    <article class="persona rv"><span class="av b" aria-hidden="true">DH</span><div><h3>Deyner Higuera</h3><p class="rol">Cofundador · líder técnico de WuN Gobierno</p><p>Más de tres años digitalizando trámites ciudadanos de servicios públicos. Lidera la arquitectura y la ejecución técnica de los proyectos con entidades públicas.</p></div></article>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-h rv"><h2>Nuestros compromisos</h2><p class="mute">Lo que puedes exigirnos en cada proyecto.</p></div>
+  <div class="comp rv">
+    <div><b>Tus datos son tuyos</b><span>Tratamiento según la Ley 1581 de 2012 y exportación cuando la pidas.</span></div>
+    <div><b>Seguridad todos los días</b><span>Revisión automática de dependencias, accesos y respaldos.</span></div>
+    <div><b>Todo por escrito</b><span>Propuesta, alcance, precio y entregables antes de empezar.</span></div>
+    <div><b>Ruta de certificación</b><span>Meta 2027: ISO/IEC 27001 e ISO 9001.</span></div>
+  </div>
+</div></section>
+
+<section class="band" id="contacto"><div class="wrap">
+  <div class="cta rv">
+    <div><h2>¿Qué proceso te está quitando más tiempo?</h2><p>Cuéntanos y te decimos, sin costo, cómo lo automatizaríamos. Negocios, clínicas, laboratorios y entidades.</p></div>
+    <div class="datos">
+      <a href="https://wa.me/573178045295?text=Hola%20WuN%2C%20quiero%20un%20diagn%C3%B3stico">WhatsApp 317 804 5295<small>Respondemos en horario hábil</small></a>
+      <a href="mailto:hola.somoswun@gmail.com">hola.somoswun@gmail.com<small>Para propuestas, clínicas y entidades</small></a>
+      <div>Bucaramanga, Santander<small>Atendemos en sitio y a distancia</small></div>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <div class="fila"><span>WuN · What U Need · Bucaramanga, Santander, Colombia</span><span><a href="./negocios/">WuN Negocios</a> · <a href="./gobierno/">WuN Gobierno</a> · <a href="./legal/terminos.html">Términos</a> · <a href="./legal/datos.html">Datos personales</a></span></div>
+  <details><summary>Créditos de las fotos</summary><p class="cred">Fotos de Pixabay (licencia de contenido de Pixabay, uso comercial): restaurante por tianya1223 · tienda de ropa, cafetería y panadería por Pexels · consultorio por Maximilianovich · control médico por DarkoStojanovic. Pantallas y videos: WuN.</p></details>
+</div></footer>
+<script>
+{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.08+'s';io.observe(el)});
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;if(!reduce)v.play().catch(()=>{})}else v.pause()}),{threshold:.35});
+document.querySelectorAll('.reel video').forEach(v=>vio.observe(v));
+const m=document.getElementById('menu'),l=document.getElementById('links');
+m.addEventListener('click',()=>{const a=l.classList.toggle('abierto');m.setAttribute('aria-expanded',a)});
+l.addEventListener('click',e=>{if(e.target.closest('a')){l.classList.remove('abierto');m.setAttribute('aria-expanded',false)}});
+}
+</script>
+</body>
 </html>
